@@ -1,0 +1,15 @@
+server:
+  port: 7071
+spring:
+  application:
+    name: JRTP701ISH-ApplicationRegistrationService
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: tiger
+    url: jdbc:mysql:///jrtp701-ish-db
+    username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
