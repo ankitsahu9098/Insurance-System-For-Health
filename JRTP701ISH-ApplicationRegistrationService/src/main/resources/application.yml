@@ -1,5 +1,6 @@
 server:
   port: 7071
+  address: 
 spring:
   application:
     name: JRTP701ISH-ApplicationRegistrationService
@@ -9,7 +10,12 @@ spring:
     url: jdbc:mysql:///jrtp701-ish-db
     username: root
   jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       ddl-auto: update
     show-sql: true
+
+ar: 
+    ssa-web:
+       url: http://localhost:9090/ssa-web-api/find/{ssn}
+    state: california
