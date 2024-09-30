@@ -1,0 +1,46 @@
+server:
+  port: 7075
+spring:
+  boot:
+     admin:
+        client: 
+           url: http://localhost:9999
+  application:
+    name: JRTP701ISH-Correspondence-API
+  config:
+      import: optional:configserver:http://localhost:8888 
+  mail:
+      host: smtp.gmail.com
+      username: sahuankit90980@gmail.com
+      password: atendcoyvawfbywm
+      properties:
+        mail:
+           transport:
+              protocol: smtp
+           smtp: 
+              port: 587
+              auth: true
+              starttls:
+                 enable: true
+                 required: true
+                 
+                 
+#property for register with eureka server
+eureka:
+   client:
+      service-url:
+         default-zone: http://localhost:8761/eureka
+
+         
+#activate all the actuators
+management:
+   endpoint:
+      env:
+         enabled: true
+         show-values: always
+      health:
+         show-details: always
+   endpoints:
+      web:
+            exposure:
+                include: '*'
